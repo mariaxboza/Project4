@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 
 import resources.EmptyClass;
 
-public class RockPaperScissors {
+public class RockPaperScissors { // Class to play the game
 	
 	JOP w = new JOP();
 	String[] optionStart = {"Player VS. Player", "Player VS. Computer", "Rules", "Exit"};
@@ -26,7 +26,7 @@ public class RockPaperScissors {
 	
 
 	public RockPaperScissors()
-	{
+	{ // Start game and have the player choose what they want to play
 		while(StartOption != -1 && p1p != -1 && p2p != -1)
 		{
 		StartOption = w.option(optionStart, null, "How do you want to play?", start);
@@ -48,7 +48,7 @@ public class RockPaperScissors {
 	}
 	
 	public void PlayerVSComputer()
-	{
+	{ // Method for when the player chooses player vs computer
 		p1 = w.in("What is your name?", "Name", question);
 		p2 = "Computer";
 		while(p1p != -1)
@@ -73,7 +73,7 @@ public class RockPaperScissors {
 	}
 	
 	public void PlayerVSPlayer()
-	{
+	{ // Method for when player chooses player vs player
 		p1 = w.in("Player One what is your name?", "Name", question);
 		p2 = w.in("Player Two what is your name?", "Name", question);
 		while(p1p != -1 && p2p != -1)
@@ -89,7 +89,7 @@ public class RockPaperScissors {
 	}
 	
 	public void play(int p1p, int p2p)
-	{	
+	{	// Method to get how many points each player has and who was the winner of the round
 		if(p1p == 0 && p2p == 1)
 		{
 			w.msg(p2 + " has won!", "Winner!", winner);
